@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table-Printer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./image/Cartoon-Teacher-PNG.png" alt="teacher">
+    <h1>Table Printer</h1>
+    <button onclick="TableGenerator()">Click Me</button>
+    <button onclick="TableReset()">Reset</button>
+    <p id="Table"></p> 
+
+<script>
+        function TableGenerator(){
+    let tableNumber = +prompt("Which table do you want to generate?");
+    let startFrom = +prompt("From which number do you want to start?");
+    let endTo = +prompt("To which number do you want to end?");
+
+    let tableContent = "";
+
+    for (let i = startFrom; i<= endTo; i++){
+        tableContent += `${tableNumber} x ${i} = ${tableNumber * i} <br>`; 
+        document.getElementById(`Table`).innerHTML = tableContent ;
+    }
+}
+    function TableReset(){
+    document.getElementById(`Table`).innerHTML = "";
+    }
+
+</script>
+
+</body>
+</html>
